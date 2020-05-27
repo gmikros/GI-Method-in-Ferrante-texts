@@ -9,10 +9,10 @@ library(stylo)
 setwd("/Users/gmikr/Documents/corpus")
 
 # loading the files from a specified directory:
-tokenized.texts = load.corpus.and.parse(files = "all", features = "c", ngram.size = 3)
+tokenized.texts = load.corpus.and.parse(files = "all", features = "w")
 
-# computing a list of most frequent words (trimmed to top n items):
-features = make.frequency.list(tokenized.texts, head = 3000)
+# computing a list of most frequent words (trimmed to top n items). In the literary corpus n was set to 5000 and to the non-literal corpus to 2000:
+features = make.frequency.list(tokenized.texts, head = 2000)
 
 # producing a table of relative frequencies:
 Impdata = make.table.of.frequencies(tokenized.texts, features, relative = TRUE)
